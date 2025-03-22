@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Lista de Proveniências</h2>
+<ul>
+	{% for proveniencia in proveniencias %}
+		<li>
+			<a href="{% url 'proveniencia:proveniencia_detalhes' proveniencia.pk %}">
+				{{ proveniencia.nome }}
+			</a>
+		</li>
+	{% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,14 @@
+
+	<h2>Lista de Doadores</h2>
+	<ul>
+		{% for tipo in tipagem %}
+			<li>
+				<a href="{% url 'tipo:tipo_detalhes' tipo.pk %}">
+					{{ tipo }}
+				</a>
+			</li>
+		{% empty %}
+			<li><p>Nenhum doador cadastrado.</p>
+		{% endfor %}
+		<a href="{% url 'doador:doador_novo' %}">Inserir um Doador</a>
+	</ul>

@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cadastro de Paciente</title>
+</head>
+<body>
+	<h1>Cadastro de Paciente - Etapa {{ wizard.steps.step1 }} de {{ wizard.steps.count }}</h1>
+
+	<form method="post">
+		{% csrf_token %}
+		{{ wizard.management_form }}
+		{{ wizard.form.as_p }}
+		
+		<button type="submit">
+			{% if wizard.steps.next %} Próxima {% else %} Finalizar {% endif %}
+		</button>
+	</form>
+</body>
+</html>

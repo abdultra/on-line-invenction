@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Confirmar Exclusão{% endblock %}
+
+{% block conteudo %}
+	<h2>Confirmar Exclusão</h2>
+	<p>Tem certeza que deseja excluir o doador "{{ doador.nome }}"?</p>
+
+	<form method="post">
+		{% csrf_token %}
+		<button type="submit">Confirmar</button>
+	</form>
+
+	<a href="{% url 'doador_lista' %}">Cancelar</a>
+{% endblock %}

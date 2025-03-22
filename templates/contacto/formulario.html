@@ -1,0 +1,10 @@
+
+	<h2>{% if object %}Editar Contato{% else %}Criar Novo Contato{% endif %}</h2>
+
+	<form method="post">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit">Salvar</button>
+	</form>
+
+	<a href="{% url 'contacto:listar' %}">Cancelar</a>

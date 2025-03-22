@@ -1,0 +1,13 @@
+
+	<h2>Lista de Doadores</h2>
+	<ul>
+		{% for doador in doadores %}
+			<li>
+				<a href="{% url 'doador:doador_detalhes' doador.pk %}">
+					{{ doador.nome_completo }} - {{ doador.tipo_sanguineo }}
+				</a>
+			</li>
+		{% empty %}
+			<p>Nenhum doador cadastrado.</p>
+		{% endfor %}
+	</ul>

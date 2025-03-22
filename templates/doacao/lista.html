@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Lista de Doadores{% endblock %}
+
+{% block conteudo %}
+	<h2>Lista de Doadores</h2>
+	<ul>
+		{% for doador in doadores %}
+			<li>
+				<a href="{% url 'doador_detalhes' doador.pk %}">
+					{{ doador.nome }}
+				</a>
+			</li>
+		{% empty %}
+			<p>Nenhum doador cadastrado.</p>
+		{% endfor %}
+	</ul>
+{% endblock %}

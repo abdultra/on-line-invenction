@@ -1,0 +1,16 @@
+
+	<h2>Lista de Contactos</h2>
+	<ul>
+		{% for contacto in contactos %}
+			<li>
+				<a href="{% url 'contacto:listar' contacto.pk %}">
+					{{ paciente }} - {{ tipo }} - {{ valor }}
+				</a>
+			</li>
+		{% empty %}
+			<li><p>Nenhum contacto cadastrado.</p>
+			<li>
+				<a href="{% url 'contacto:criar' %}">Inserir contacto</a>
+			</li>
+		{% endfor %}
+	</ul>

@@ -1,0 +1,8 @@
+<h2>Detalhes do Gênero</h2>
+
+<p><strong>ID:</strong> {{ genero.id }}</p>
+<p><strong>Nome:</strong> {{ genero.nome }}</p>
+
+<a href="{% url 'genero:genero_listar' %}" class="btn btn-secondary">Voltar</a>
+<a href="{% url 'genero:genero_editar' genero.id %}" class="btn btn-warning">Editar</a>
+<a href="{% url 'genero:genero_excluir' genero.id %}" class="btn btn-danger">Excluir</a>

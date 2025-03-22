@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Detalhes de {{ doador.nome }}{% endblock %}
+
+{% block conteudo %}
+	<h2>{{ doador.nome }}</h2>
+	<p>Idade: {{ doador.idade }}</p>
+	<p>Tipo Sanguíneo: {{ doador.tipo_sanguineo }}</p>
+
+	<a href="{% url 'doador_editar' doador.pk %}">Editar</a> |
+	<a href="{% url 'doador_excluir' doador.pk %}">Excluir</a>
+{% endblock %}

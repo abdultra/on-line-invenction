@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Excluir Proveniência{% endblock %}
+
+{% block content %}
+<h2>Tem certeza que deseja excluir "{{ proveniencia.nome }}"?</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Sim, excluir</button>
+</form>
+
+<a href="{% url 'proveniencia:listar' %}">Cancelar</a>
+{% endblock %}

@@ -1,0 +1,10 @@
+
+	<h2>Confirmar Exclusão</h2>
+	<p>Tem certeza que deseja excluir o doador "{{ doador.nome_completo }}"?</p>
+
+	<form method="post">
+		{% csrf_token %}
+		<button type="submit">Confirmar</button>
+	</form>
+
+	<a href="{% url 'doador:doador_lista' %}">Cancelar</a>

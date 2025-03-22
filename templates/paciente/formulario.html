@@ -1,0 +1,9 @@
+{% block content %}
+	<h1>{% if object %}Editar Paciente{% else %}Criar Paciente{% endif %}</h1>
+	<form method="post">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit">Salvar</button>
+	</form>
+	<a href="{% url 'paciente:paciente_lista' %}">Voltar para a lista</a>
+{% endblock %}

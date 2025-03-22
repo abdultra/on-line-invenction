@@ -1,0 +1,14 @@
+<h1>Lista de Pacientes</h1>
+<ul>
+	{% for paciente in pacientes %}
+		<li>
+			{{ paciente.nome_completo }} - {{ paciente.idade }}
+			<a href="{% url 'paciente:paciente_atualizar' paciente.pk %}">Editar</a> |
+			<a href="{% url 'paciente:paciente_excluir' paciente.pk %}">Excluir</a>
+		</li>
+	{% empty %}
+		<li>Nenhum paciente cadastrado.</li>
+	{% endfor %}
+</ul>
+
+<a href="{% url 'paciente:paciente_criar' %}">Adicionar Paciente</a>

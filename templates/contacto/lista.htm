@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>Lista de Contactos</h1>
+	<ul>
+		{% for contacto in object_list %}
+			<li>
+				{{ contacto.nome }} - {{ contacto.telefone }}
+				<a href="{% url 'contacto:editar' contacto.pk %}">Editar</a> |
+				<a href="{% url 'contacto:excluir' contacto.pk %}">Excluir</a>
+			</li>
+		{% empty %}
+			<p>Nenhum contacto cadastrado.</p>
+		{% endfor %}
+	</ul>
+	<a href="{% url 'contacto:criar' %}">Adicionar Contacto</a>
+{% endblock %}
+

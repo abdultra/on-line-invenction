@@ -1,0 +1,9 @@
+{% block content %}
+	<h1>Confirmar Exclusão</h1>
+	<p>Tem certeza que deseja excluir "{{ object }}"?</p>
+	<form method="post">
+		{% csrf_token %}
+		<button type="submit">Sim, excluir</button>
+	</form>
+	<a href="{% url 'paciente:paciente_lista' %}">Cancelar</a>
+{% endblock %}

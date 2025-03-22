@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {% if object %}Editar Proveniência{% else %}Criar Proveniência{% endif %}
+{% endblock %}
+
+{% block content %}
+<h2>{% if object %}Editar Proveniência{% else %}Criar Nova Proveniência{% endif %}</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Salvar</button>
+</form>
+
+<a href="{% url 'proveniencia:proveniencia_listar' %}">Cancelar</a>
+{% endblock %}

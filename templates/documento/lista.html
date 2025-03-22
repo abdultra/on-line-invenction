@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Lista de Documentos</h2>
+<table>
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Nome</th>
+			<th>Ações</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for documento in pacientes %}
+		<tr>
+			<td>{{ documento.id }}</td>
+			<td>{{ documento.nome }}</td>
+			<td>
+				<a href="{% url 'documento:documento_update' documento.id %}">Editar</a> |
+				<a href="{% url 'documento:documento_delete' documento.id %}">Excluir</a>
+			</td>
+		</tr>
+		{% empty %}
+		<tr>
+			<td colspan="3">Nenhum documento cadastrado.</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+<a href="{% url 'documento:documento_create' %}">Adicionar Novo Documento</a>
+{% endblock %}

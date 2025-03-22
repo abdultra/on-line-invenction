@@ -1,0 +1,16 @@
+
+	<h2>Lista de Tipos Sanguíneos</h2>
+	<ul>
+		{% for tipo in tipagem %}
+			<li>
+				<a href="{% url 'tipagem:tipagem_detalhes' tipagem.pk %}">
+					{{ tipo }}
+				</a>
+			</li>
+		{% empty %}
+			<li><p>Nenhum tipo cadastrado.</p>
+			<li>
+				<a href="{% url 'tipagem:tipagem_criar' %}">Inserir tipo Sanguíneo</a>
+			</li>
+		{% endfor %}
+	</ul>

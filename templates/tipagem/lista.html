@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lista de Tipos Sanguíneos</title>
+</head>
+<body>
+	<h1>Lista de Tipos Sanguíneos</h1>
+	<a href="{% url 'tipagem:tipagem_criar' %}">Criar Novo Tipo Sanguíneo</a>
+
+	{% if tipagem %}
+		<ul>
+			{% for tipo in tipagem %}
+				<li>
+					<a href="{% url 'tipagem:tipagem_detalhes' tipo.pk %}">{{ tipo }}</a> |
+					<a href="{% url 'tipagem:tipagem_editar' tipo.pk %}">Editar</a> |
+					<a href="{% url 'tipagem:tipagemm_excluir' tipo.pk %}">Excluir</a>
+				</li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p>Nenhum tipo sanguíneo cadastrado.</p>
+	{% endif %}
+</body>
+</html>
