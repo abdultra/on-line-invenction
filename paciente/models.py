@@ -26,7 +26,7 @@ class Paciente(models.Model):
 	nascimento = models.DateField()
 	genero = models.CharField(max_length=10, choices=Genero.choices)
 	telefone = models.CharField(max_length = 9, unique=True)
-	nacionalidade = CountryField(blank=False, default="MZ")
+	nacionalidade = models.CharField(max_length = 50, blank=False, default="Moçambicano")
 	residencia = models.CharField(max_length=255, blank=True)
 	proveniencia = models.CharField(choices=Proveniencia.choices, max_length=255, blank=True)
 	historico_medico = models.TextField(blank=True, null=True)

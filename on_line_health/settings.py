@@ -1,15 +1,12 @@
 import os
 from pathlib import Path
-from dotenv import load_dotenv
-
-# Carrega variáveis do arquivo .env
-load_dotenv()
 
 # Caminho base do projeto
 BASE_DIR=Path(__file__).resolve().parent.parent
 
 # Configurações básicas
-SECRET_KEY = gdtyuouujh577gfd+-&€@:;_"€#@##"'&&;;:'""%©®✓[°=¢¥•√÷§∆\}=°¢¥¥`√π÷§∆×°^®%%✓✓®®/-1336558cxcgtrdxDSTYYJVCFUIJVF:-&&__/))0986-_4566&
+SECRET_KEY = 'gdtyuouujh577gfd+-@:;_"#@##"''""%[=\}=`yydvni8653rdgjifbvr753eu88hhfissoudoretirareu/-1336558cxcgtrdxDSTYYJVCFUIJVF:-__/))0986_4566&'
+
 DEBUG=True
 ALLOWED_HOSTS = []
 
@@ -42,18 +39,16 @@ ROOT_URLCONF='on_line_health.urls'
 WSGI_APPLICATION='on_line_health.wsgi.application'
 
 # Banco de Dados (Melhorando para MySQL)
-DATABASES={
-	'default':{
-		'ENGINE':'django.db.backends.mysql',
-		'NAME': 'on_line_health',
-		'USER': 'root',
-		'PASSWORD': 'root',
-		'HOST': 'localhost'),
-		'PORT': '3306'),
-		'OPTIONS':{'charset':'utf8mb4'},
-	}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',  # Nome do banco de dados
+        'USER': 'trato',     # Nome do usuário
+        'PASSWORD': 'root',  # Senha do usuário
+        'HOST': 'localhost', # Endereço do banco de dados (localhost no caso)
+        'PORT': '5432',      # Porta padrão do PostgreSQL
+    }
 }
-
 # Validação de Senhas
 AUTH_PASSWORD_VALIDATORS=[
 	{'NAME':'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
