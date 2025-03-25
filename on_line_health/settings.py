@@ -9,9 +9,9 @@ load_dotenv()
 BASE_DIR=Path(__file__).resolve().parent.parent
 
 # Configurações básicas
-SECRET_KEY=os.getenv('SECRET_KEY', 'sua_chave_secreta_super_segura')
-DEBUG=os.getenv('DEBUG', 'False')=='True'
-ALLOWED_HOSTS=os.getenv('ALLOWED_HOSTS', '').split(',')
+SECRET_KEY = gdtyuouujh577gfd+-&€@:;_"€#@##"'&&;;:'""%©®✓[°=¢¥•√÷§∆\}=°¢¥¥`√π÷§∆×°^®%%✓✓®®/-1336558cxcgtrdxDSTYYJVCFUIJVF:-&&__/))0986-_4566&
+DEBUG=True
+ALLOWED_HOSTS = []
 
 # Aplicações instaladas
 INSTALLED_APPS=[
@@ -24,13 +24,6 @@ INSTALLED_APPS=[
 	'django.contrib.sessions',
 	'django.contrib.messages',
 	'django.contrib.staticfiles',
-
-	# Aplicações de terceiros
-	'crispy_forms',
-	'crispy_bootstrap5',
-
-	# Suas aplicações
-	'core',
 ]
 
 # Middlewares
@@ -52,11 +45,11 @@ WSGI_APPLICATION='on_line_health.wsgi.application'
 DATABASES={
 	'default':{
 		'ENGINE':'django.db.backends.mysql',
-		'NAME':os.getenv('DB_NAME'),
-		'USER':os.getenv('DB_USER'),
-		'PASSWORD':os.getenv('DB_PASSWORD'),
-		'HOST':os.getenv('DB_HOST', 'localhost'),
-		'PORT':os.getenv('DB_PORT', '3306'),
+		'NAME': 'on_line_health',
+		'USER': 'root',
+		'PASSWORD': 'root',
+		'HOST': 'localhost'),
+		'PORT': '3306'),
 		'OPTIONS':{'charset':'utf8mb4'},
 	}
 }
