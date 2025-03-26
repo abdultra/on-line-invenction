@@ -34,7 +34,7 @@ class DoadorDeleteView(DeleteView):
 	template_name = 'excluir.html'
 	success_url = reverse_lazy('doador:listar')
 
-# -------------------- DOAÇÃO --------------------
+# -------------------- DOAÇÃO ----------------------------
 class DoacaoCreateView(CreateView):
 	model = Doacao
 	template_name = 'criar.html'
@@ -62,7 +62,7 @@ class DoacaoDeleteView(DeleteView):
 	template_name = 'excluir.html'
 	success_url = reverse_lazy('doacao:listar')
 
-# -------------------- ESTOQUE DE SANGUE --------------------
+# ----------------- ESTOQUE DE SANGUE --------------------
 class EstoqueCreateView(CreateView):
 	model = EstoqueSangue
 	template_name = 'criar.html'

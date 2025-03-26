@@ -1,9 +1,12 @@
 from django.shortcuts import render
 from django.db import models
+from .models import Paciente
+from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 class PacienteListView(ListView):
     model = Paciente
-    template_name = 'paciente/lista.html'
+    template_name = 'paciente/list.html'
     context_object_name = 'pacientes'
 
 class PacienteDetailView(DetailView):
